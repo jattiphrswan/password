@@ -1,5 +1,9 @@
 import { useState, useCallback } from 'react'
 
+
+// import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
 import './App.css'
 
 function App() {
@@ -72,4 +76,12 @@ function App() {
   )
 }
 
-export default App
+export default App( {
+
+  
+  plugins: [react()],
+  base: '/repository-name/'
+  
+}
+)
+
