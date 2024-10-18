@@ -78,9 +78,8 @@ function App() {
 
 export default App( {
 
-  
   plugins: [react()],
-  base: 'password-genrator'
+  base: '/password-genrator/',
   
 }
 )
