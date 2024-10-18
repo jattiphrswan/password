@@ -78,8 +78,9 @@ function App() {
 
 export default App( {
 
+  
   plugins: [react()],
-  base: '/password-genrator/',
+  base: 'https://jattiphrswan.github.io/password-genrator/'
   
 }
 )
