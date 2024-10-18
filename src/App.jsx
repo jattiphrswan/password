@@ -80,7 +80,7 @@ export default App( {
 
   
   plugins: [react()],
-  base: '/repository-name/'
+  base: 'password-genrator'
   
 }
 )
