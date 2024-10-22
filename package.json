@@ -1,20 +1,18 @@
 {
-  "homepage": "https://jattiphrswan.github.io/password-genrator/",
-  "name": "password-gentrator",
+  "homepage": "https://jattiphrswan.github.io/password/",
+  "name": "password",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-     "serve": "vite preview"
+    "serve": "vite preview"
   },
-
-  
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

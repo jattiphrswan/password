@@ -1,8 +1,8 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 
 
 // import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+// import react from '@vitejs/plugin-react';
 
 import './App.css'
 
@@ -11,6 +11,8 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false)
   const [charAllowed, setCharAllowed] = useState(false)
   const [password, setPassword] = useState('')
+
+ 
 
   const generatePassword = useCallback(()  => {
     let pass =""
@@ -23,6 +25,18 @@ function App() {
     }
     setPassword(pass)
   }, [length , numberAllowed , charAllowed]) 
+  
+  useEffect(() => {
+    generatePassword()
+  }, [length, numberAllowed, charAllowed])
+   
+  const copyPassword = () => {
+    window.navigator.Clipboard.writeText(password)
+  }
+
+  // useEffect(() => {    
+  //   generatePassword();
+  // }, []);
 
   return (
     <div className='w-full max-w-md h-screen  mx-auto shadow-sm rounded-lg px-4 pb-10 my-8 bg-gray-800 text-orange-500'>
@@ -37,7 +51,8 @@ function App() {
            type="text" 
             readOnly
            />
-           <button className='bg-green-500 text-white p-5'>
+           <button  onClick={copyPassword}
+           className='bg-green-500 text-white p-5'>
             copy
            </button>
       </div>
@@ -71,17 +86,9 @@ function App() {
               <label htmlFor="char">char</label>
           </div>
       </div>
-      <div onClick={generatePassword} className='bg-green-500 text-white p-3'>Genrate</div>
+     
     </div>
   )
 }
 
-export default App( {
-
-  
-  plugins: [react()],
-  base: 'password-genrator'
-  
-}
-)
-
+export default App
